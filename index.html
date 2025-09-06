@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 12th Birthday Aisyah Azzahra! 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b9d 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Background particles */
+        .background-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float-particles 8s infinite linear;
+        }
+        
+        .particle:nth-child(1) { width: 6px; height: 6px; left: 10%; animation-delay: -2s; }
+        .particle:nth-child(2) { width: 8px; height: 8px; left: 20%; animation-delay: -4s; }
+        .particle:nth-child(3) { width: 4px; height: 4px; left: 30%; animation-delay: -6s; }
+        .particle:nth-child(4) { width: 7px; height: 7px; left: 40%; animation-delay: -1s; }
+        .particle:nth-child(5) { width: 5px; height: 5px; left: 50%; animation-delay: -3s; }
+        .particle:nth-child(6) { width: 6px; height: 6px; left: 60%; animation-delay: -5s; }
+        .particle:nth-child(7) { width: 8px; height: 8px; left: 70%; animation-delay: -7s; }
+        .particle:nth-child(8) { width: 4px; height: 4px; left: 80%; animation-delay: -2.5s; }
+        .particle:nth-child(9) { width: 6px; height: 6px; left: 90%; animation-delay: -4.5s; }
+        .particle:nth-child(10) { width: 5px; height: 5px; left: 95%; animation-delay: -1.5s; }
+        
+        @keyframes float-particles {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            z-index: 2;
+        }
+        
+        /* Start Screen */
+        #startScreen {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); }
+            to { box-shadow: 0 25px 60px rgba(255, 107, 157, 0.4); }
+        }
+        
+        #startScreen img {
+            max-width: 220px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        #startScreen img:hover {
+            transform: scale(1.05);
+        }
+        
+        #startBtn {
+            font-size: 1.3rem;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #ff6b9d, #ff8a80, #ffa726);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #startBtn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        #startBtn:hover::before {
+            left: 100%;
+        }
+        
+        #startBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.6);
+        }
+        
+        /* Birthday Card */
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            max-width: 650px;
+            width: 100%;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            transform: translateY(30px);
+            animation: slideUp 1s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+            display: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .birthday-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 192, 203, 0.4), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 4s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b9d, #ffa726, #ff5722, #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            animation: bounce 2.5s infinite;
+            position: relative;
+            z-index: 3;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-12px); }
+            60% { transform: translateY(-6px); }
+        }
+        
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Dancing Script', cursive;
+            color: #4a5568;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .age {
+            font-size: 5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #667eea, #764ba2, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 25px 0;
+            animation: pulse 2.5s infinite;
+            position: relative;
+            z-index: 3;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        .date {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 35px;
+            font-weight: 600;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .message {
+            font-size: 1.3rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 192, 203, 0.3);
+        }
+        
+        .wishes {
+            margin-top: 35px;
+            padding: 30px;
+            background: linear-gradient(45deg, rgba(255, 182, 193, 0.4), rgba(255, 240, 245, 0.4));
+            border-radius: 20px;
+            border: 2px solid rgba(255, 192, 203, 0.6);
+            position: relative;
+            z-index: 3;
+            backdrop-filter: blur(5px);
+        }
+        
+        .wishes h3 {
+            color: #d63384;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        
+        .wish-list {
+            text-align: left;
+            color: #495057;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+        
+        .cake {
+            font-size: 5rem;
+            margin: 25px 0;
+            animation: rotate 4s ease-in-out infinite;
+            position: relative;
+            z-index: 3;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+        }
+        
+        @keyframes rotate {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-8deg) scale(1.1); }
+            75% { transform: rotate(8deg) scale(1.1); }
+        }
+        
+        /* Floating emojis */
+        .flower, .balloon-fly {
+            position: fixed;
+            font-size: 2.5rem;
+            pointer-events: none;
+            animation: floatUp 8s linear forwards;
+            z-index: 10;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+        }
+        
+        @keyframes floatUp {
+            0% { 
+                transform: translateY(0) rotate(0deg) scale(1); 
+                opacity: 1; 
+            }
+            50% {
+                transform: translateY(-50vh) rotate(180deg) scale(1.2);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: translateY(-100vh) rotate(360deg) scale(1.5); 
+                opacity: 0; 
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title { font-size: 2.5rem; }
+            .name { font-size: 2.2rem; }
+            .age { font-size: 3.5rem; }
+            .cake { font-size: 3.5rem; }
+            .birthday-card { padding: 35px 25px; }
+            .message { font-size: 1.1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .title { font-size: 2rem; }
+            .name { font-size: 1.8rem; }
+            .age { font-size: 2.8rem; }
+            .cake { font-size: 3rem; }
+            .birthday-card { 
+                padding: 25px 20px;
+                margin: 10px;
+            }
+            .message { font-size: 1rem; }
+            #startScreen { padding: 30px 20px; }
+            #startBtn { 
+                font-size: 1.1rem;
+                padding: 15px 30px;
+            }
+        }
+        
+        /* Music visualization */
+        .music-wave {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .wave-bar {
+            width: 3px;
+            height: 15px;
+            background: linear-gradient(45deg, #ff6b9d, #ffa726);
+            border-radius: 2px;
+            animation: wave 1s ease-in-out infinite;
+        }
+        
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+        
+        @keyframes wave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(2); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background particles -->
+    <div class="background-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Halaman awal -->
+        <div id="startScreen">
+            <img src="foto.jpg" alt="Birthday Girl" />
+            <div>
+                <h2 style="color: white; margin-bottom: 15px; font-size: 1.5rem; font-family: 'Dancing Script', cursive;">
+                    🌸 Selamat Datang di Pesta Ulang Tahun 🌸
+                </h2>
+                <button id="startBtn">
+                    🎈 Mulai Perayaan 🎂
+                </button>
+            </div>
+        </div>
+
+        <!-- Kartu ulang tahun -->
+        <div class="birthday-card" id="card">
+            <h1 class="title">🎉 HAPPY BIRTHDAY 🎉</h1>
+            <h2 class="name">Aisyah Azzahra</h2>
+            <div class="cake">🎂</div>
+            <div class="age">12 Tahun</div>
+            <div class="date">7 September 2025</div>
+            
+            <div class="message">
+                Selamat ulang tahun yang ke-12, Ais KUEECUT! 💖<br>
+                Semoga hari spesialmu dipenuhi dengan kebahagiaan,<br>
+                tertawa bersama keluarga dan teman-teman,<br>
+                dan semua impianmu tercapai! ✨
+            </div>
+            
+            <audio id="birthdayMusic" loop>
+                <!-- Backup audio menggunakan Web Audio API -->
+            </audio>
+            
+            <div class="wishes">
+                <h3>🌟 Ucapan Spesial Untukmu 🌟</h3>
+                <div class="wish-list">
+                    💝 Semoga selalu sehat dan bahagia<br>
+                    🌈 Semoga prestasi di sekolah semakin gemilang<br>
+                    🦋 Semoga persahabatan selalu indah dan langgeng<br>
+                    ⭐ Semoga semua cita-cita dapat tercapai<br>
+                    🎈 Semoga tahun ke-12 ini penuh dengan petualangan seru!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Music wave visualization -->
+    <div class="music-wave" id="musicWave" style="display: none;">
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <span style="color: white; font-size: 0.8rem; margin-left: 8px;">♪</span>
+    </div>
+
+    <script>
+        const startBtn = document.getElementById('startBtn');
+        const card = document.getElementById('card');
+        const musicWave = document.getElementById('musicWave');
+        let audioContext;
+        let isPlaying = false;
+
+        // Web Audio API untuk musik
+        function createBirthdayMelody() {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            const notes = [
+                { freq: 264, duration: 0.5 }, // C - Happy
+                { freq: 264, duration: 0.5 }, // C - Birth-
+                { freq: 297, duration: 1 },   // D - day
+                { freq: 264, duration: 1 },   // C - to
+                { freq: 352, duration: 1 },   // F - you
+                { freq: 330, duration: 2 },   // E - (pause)
+                
+                { freq: 264, duration: 0.5 }, // C - Happy
+                { freq: 264, duration: 0.5 }, // C - Birth-
+                { freq: 297, duration: 1 },   // D - day
+                { freq: 264, duration: 1 },   // C - to
+                { freq: 396, duration: 1 },   // G - you
+                { freq: 352, duration: 2 },   // F - (pause)
+                
+                { freq: 264, duration: 0.5 }, // C - Happy
+                { freq: 264, duration: 0.5 }, // C - Birth-
+                { freq: 528, duration: 1 },   // C5 - day
+                { freq: 440, duration: 1 },   // A - dear
+                { freq: 352, duration: 1 },   // F - Ais-
+                { freq: 330, duration: 1 },   // E - yah
+                { freq: 297, duration: 2 },   // D - (pause)
+                
+                { freq: 469, duration: 0.5 }, // Bb - Happy
+                { freq: 469, duration: 0.5 }, // Bb - Birth-
+                { freq: 440, duration: 1 },   // A - day
+                { freq: 352, duration: 1 },   // F - to
+                { freq: 396, duration: 1 },   // G - you
+                { freq: 352, duration: 3 },   // F - (end)
+            ];
+            
+            let currentTime = audioContext.currentTime;
+            
+            notes.forEach(note => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.setValueAtTime(note.freq, currentTime);
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0, currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.15, currentTime + 0.1);
+                gainNode.gain.linearRampToValueAtTime(0, currentTime + note.duration - 0.1);
+                
+                oscillator.start(currentTime);
+                oscillator.stop(currentTime + note.duration);
+                
+                currentTime += note.duration;
+            });
+        }
+
+        function startContinuousMusic() {
+            if (!isPlaying) {
+                isPlaying = true;
+                playMelodyLoop();
+                musicWave.style.display = 'flex';
+            }
+        }
+
+        function playMelodyLoop() {
+            if (isPlaying) {
+                try {
+                    createBirthdayMelody();
+                    setTimeout(() => {
+                        if (isPlaying) {
+                            playMelodyLoop();
+                        }
+                    }, 20000); // 20 detik interval
+                } catch (error) {
+                    console.log('Audio error:', error);
+                    setTimeout(() => {
+                        if (isPlaying) {
+                            playMelodyLoop();
+                        }
+                    }, 5000);
+                }
+            }
+        }
+
+        // Fungsi efek emoji yang lebih cantik
+        function spawnEmoji() {
+            const emojis = ['🌸', '🎈', '🦋', '✨', '💫', '🌺', '🎊', '💖'];
+            const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+            const el = document.createElement('div');
+            el.className = Math.random() > 0.5 ? 'flower' : 'balloon-fly';
+            el.textContent = emoji;
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.top = '100vh';
+            el.style.fontSize = (Math.random() * 1.5 + 2) + 'rem';
+            el.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 10000);
+        }
+
+        startBtn.addEventListener('click', () => {
+            // Tampilkan kartu dengan animasi
+            card.style.display = 'block';
+            document.getElementById('startScreen').style.display = 'none';
+
+            // Mulai musik
+            setTimeout(() => {
+                startContinuousMusic();
+            }, 500);
+
+            // Jalankan efek emoji
+            setInterval(spawnEmoji, 500);
+            
+            // Spawn beberapa emoji sekaligus untuk efek awal
+            for(let i = 0; i < 5; i++) {
+                setTimeout(spawnEmoji, i * 200);
+            }
+        });
+
+        // Background particles continuous spawn
+        function spawnParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = particle.style.height = (Math.random() * 4 + 4) + 'px';
+            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            particle.style.animationDelay = '0s';
+            document.querySelector('.background-particles').appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 10000);
+        }
+
+        // Spawn particles continuously
+        setInterval(spawnParticle, 1000);
+
+        console.log('🎉 Happy 12th Birthday Aisyah Azzahra! 🎂');
+    </script>
+</body>
+</html>
